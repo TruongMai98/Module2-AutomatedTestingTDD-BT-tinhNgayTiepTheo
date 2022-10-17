@@ -3,8 +3,10 @@ public class NextDayCalculator {
     public static final String CONNECTION = "/";
 
     public static String getNextDay(int day, int month, int year) {
-        if (day == 31) {
-            day = 1;
+        int lastDayOfMonth = 31;
+        int firstDayOfMonth = 1;
+        if (day == lastDayOfMonth) {
+            day = firstDayOfMonth;
             month++;
         } else {
             day++;
