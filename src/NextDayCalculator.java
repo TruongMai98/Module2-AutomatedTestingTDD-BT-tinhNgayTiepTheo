@@ -33,9 +33,9 @@ public class NextDayCalculator {
                 lastDayOfMonth = 30;
                 break;
             case 2:
-                if (year % 400 == 0 ) {
+                if (divisibleBy400(year)) {
                     lastDayOfMonth = 29;
-                } else if (year % 4 == 0 && year % 100 != 0) {
+                } else if (divisibleBy4(year) && notDivisibleBy100(year)) {
                     lastDayOfMonth = 29;
                 } else {
                     lastDayOfMonth = 28;
@@ -44,5 +44,17 @@ public class NextDayCalculator {
                 break;
         }
         return lastDayOfMonth;
+    }
+
+    private static boolean notDivisibleBy100(int year) {
+        return year % 100 != 0;
+    }
+
+    private static boolean divisibleBy4(int year) {
+        return year % 4 == 0;
+    }
+
+    private static boolean divisibleBy400(int year) {
+        return year % 400 == 0;
     }
 }
