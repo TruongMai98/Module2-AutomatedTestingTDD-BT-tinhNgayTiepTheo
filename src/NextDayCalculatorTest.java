@@ -50,5 +50,16 @@ class NextDayCalculatorTest {
         String result = NextDayCalculator.getNextDay(dateTest, monthTest, yearTest);
         assertEquals(excepted, result);
     }
+    @Test
+    @DisplayName("case 29/2/2018")
+    void testDay29Month2Year2018() {
+        int dateTest = 29;
+        int monthTest = 2;
+        int yearTest = 2018;
+        String excepted = "1/3/2018";
+
+        String result = NextDayCalculator.getNextDay(dateTest, monthTest, yearTest);
+        assertEquals(excepted, result);
+    }
 
 }
