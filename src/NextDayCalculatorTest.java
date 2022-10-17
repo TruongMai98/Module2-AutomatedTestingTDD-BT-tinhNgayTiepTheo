@@ -51,12 +51,12 @@ class NextDayCalculatorTest {
         assertEquals(excepted, result);
     }
     @Test
-    @DisplayName("case 29/2/2018")
-    void testDay29Month2Year2018() {
+    @DisplayName("case 29/2/2020")
+    void testDay29Month2Year2020() {
         int dateTest = 29;
         int monthTest = 2;
-        int yearTest = 2018;
-        String excepted = "1/3/2018";
+        int yearTest = 2020;
+        String excepted = "1/3/2020";
 
         String result = NextDayCalculator.getNextDay(dateTest, monthTest, yearTest);
         assertEquals(excepted, result);
