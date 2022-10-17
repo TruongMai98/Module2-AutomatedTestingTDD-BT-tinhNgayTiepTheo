@@ -3,6 +3,18 @@ public class NextDayCalculator {
     public static final String CONNECTION = "/";
 
     public static String getNextDay(int day, int month, int year) {
+        int lastDayOfMonth = getLastDayOfMonth(month);
+        int firstDayOfMonth = 1;
+        if (day == lastDayOfMonth) {
+            day = firstDayOfMonth;
+            month++;
+        } else {
+            day++;
+        }
+        return day + CONNECTION + month + CONNECTION + year;
+    }
+
+    private static int getLastDayOfMonth(int month) {
         int lastDayOfMonth = 0;
         switch (month) {
             case 1:
@@ -22,13 +34,6 @@ public class NextDayCalculator {
                 lastDayOfMonth = 30;
                 break;
         }
-        int firstDayOfMonth = 1;
-        if (day == lastDayOfMonth) {
-            day = firstDayOfMonth;
-            month++;
-        } else {
-            day++;
-        }
-        return day + CONNECTION + month + CONNECTION + year;
+        return lastDayOfMonth;
     }
 }
