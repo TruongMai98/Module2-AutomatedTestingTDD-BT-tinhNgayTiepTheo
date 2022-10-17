@@ -5,9 +5,11 @@ public class NextDayCalculator {
     public static String getNextDay(int day, int month, int year) {
         int lastDayOfMonth = getLastDayOfMonth(month, year);
         int firstDayOfMonth = 1;
-        if (day == lastDayOfMonth && month == 12) {
+        int lastMonthOfYear = 12;
+        int firstMonthOfYear = 1;
+        if (day == lastDayOfMonth && month == lastMonthOfYear) {
             day = firstDayOfMonth;
-            month = 1;
+            month = firstMonthOfYear;
             year++;
         } else if (day == lastDayOfMonth){
             day = firstDayOfMonth;
