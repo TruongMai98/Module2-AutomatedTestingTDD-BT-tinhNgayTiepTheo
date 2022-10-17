@@ -26,12 +26,14 @@ public class NextDayCalculator {
             case 12:
                 lastDayOfMonth = 31;
                 break;
-            case 2:
             case 4:
             case 6:
             case 9:
             case 11:
                 lastDayOfMonth = 30;
+                break;
+            case 2:
+                lastDayOfMonth = 28;
                 break;
         }
         return lastDayOfMonth;
